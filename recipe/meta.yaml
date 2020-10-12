@@ -1,13 +1,13 @@
 {% set name = "tornado-sqlalchemy" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tornado_sqlalchemy-{{ version }}.tar.gz
-  sha256: 0d5d616a4edf4a01825a8e4acf7ff6b3c4192a1b49ca537da9a893a82bcb5b97
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f37e59c376aa7661beb96992977c64e6b0baf5cbe74c41ccc0bf3b25dee0e637
 
 build:
   noarch: python
@@ -17,11 +17,12 @@ build:
 requirements:
   host:
     - pip
+    - poetry
     - python >=3.5
   run:
     - python >=3.5
-    - sqlalchemy >=1.0
-    - tornado >=4.0
+    - sqlalchemy >=1.3
+    - tornado >=6.0
 
 test:
   imports:
@@ -31,7 +32,7 @@ about:
   home: https://github.com/siddhantgoel/tornado-sqlalchemy
   license: MIT
   license_family: MIT
-  license_file: 
+  license_file: LICENSE.txt
   summary: SQLAlchemy helpers for working in Tornado
   doc_url: https://tornado-sqlalchemy.readthedocs.io/
   dev_url: https://github.com/siddhantgoel/tornado-sqlalchemy
