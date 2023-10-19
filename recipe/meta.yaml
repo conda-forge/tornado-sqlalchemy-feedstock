@@ -1,13 +1,13 @@
 {% set name = "tornado-sqlalchemy" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f37e59c376aa7661beb96992977c64e6b0baf5cbe74c41ccc0bf3b25dee0e637
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c1a2d8b298c9cdca86f7d1026779b6248971471c221bdf45d1974ee297c5760c
 
 build:
   noarch: python
